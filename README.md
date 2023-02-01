@@ -71,6 +71,15 @@ git restore
 
 # 作用是将暂存区的文件从暂存区撤出，但不会更改文件
 git restore --staged
+
+# 文件已添加到版本库，但是本地测试需要更改这个文件，但是不想提交到远程仓库，使用这个命令忽略这个文件的更改
+git update-index --assume-unchanged 文件名
+
+# 同上一个文件想法，恢复忽略
+git update-index --no-assume-unchanged 文件名
+
+# 查看被忽略的文件，linux上使用
+git ls-files -v | grep -e "^[hsmrck]"git ls-files -v | grep -e "^[hsmrck]"
 ```
 
 ## 代码提交
