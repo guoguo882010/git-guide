@@ -78,6 +78,10 @@ git update-index --assume-unchanged 文件名
 # 同上一个文件想法，恢复忽略
 git update-index --no-assume-unchanged 文件名
 
+# 把所有忽略过的文件都更新出来，有时候用上面的--assume-unchanged命令忽略以后，文件没有忽略掉，使用这个命令显示出所有忽略的文件，重新git提交下，然后再运行这个命令，如果没有提示need update 的文件，则可以正常忽略
+
+git update-index  --really-refresh
+
 # 查看被忽略的文件，linux上使用
 git ls-files -v | grep -e "^[hsmrck]"git ls-files -v | grep -e "^[hsmrck]"
 ```
